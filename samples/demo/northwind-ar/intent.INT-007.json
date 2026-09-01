@@ -1,0 +1,20 @@
+{
+  "intent_id": "INT-007",
+  "version": 1,
+  "tenant_id": "ten_northwind_ar",
+  "function": "invoice-dispute",
+  "outcome": "Close customer invoice disputes with a cycle time of five calendar days or less, without leaking credit that policy does not allow.",
+  "constraints": [
+    "Credit notes above USD 5,000 require finance countersignature.",
+    "No write-off of disputed tax without tax-owner review.",
+    "Customer-facing SLA clock starts at dispute.created."
+  ],
+  "owner_id": "usr_priya",
+  "guardrails": [
+    "Appetite never lifts a verification gate.",
+    "Self-certified executor evidence is rejected."
+  ],
+  "constitution_layers_inherited": ["L0-safety", "L1-finance-control"],
+  "source": "founder-track-draft-plus-owner-ratify",
+  "provenance": "declared"
+}

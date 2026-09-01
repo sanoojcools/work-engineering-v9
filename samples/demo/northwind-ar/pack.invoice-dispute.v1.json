@@ -1,0 +1,40 @@
+{
+  "pack_id": "invoice-dispute.v1",
+  "version": "1.0.0",
+  "function": "invoice-dispute",
+  "object_types": [
+    {
+      "type": "invoice",
+      "states": ["issued", "payment_due", "disputed", "under_review", "assessed", "adjusted", "closed", "written_off"],
+      "system_of_record": "erp.ar"
+    },
+    {
+      "type": "dispute",
+      "states": ["created", "evidence_requested", "assessed", "hold_released", "appealed", "closed"],
+      "system_of_record": "erp.ar"
+    },
+    {
+      "type": "credit_note",
+      "states": ["draft", "pending_approval", "posted", "void"],
+      "system_of_record": "erp.ar"
+    }
+  ],
+  "question_bank": {
+    "adaptive": false,
+    "tracks": ["founder", "function_lead", "sme"],
+    "items": [
+      { "id": "q_units", "prompt": "Name the work you actually do on a dispute." },
+      { "id": "q_systems", "prompt": "Which systems hold the object?" },
+      { "id": "q_minutes", "prompt": "Minutes per occurrence, honest range." },
+      { "id": "q_pain", "prompt": "Where does the cycle slip?" }
+    ]
+  },
+  "recovery_multiples_stub": {
+    "L1": 0.15,
+    "L2": 0.35,
+    "L3": 0.55,
+    "L4": 0.72,
+    "L5": 0.85
+  },
+  "notes": "v0 pack. Recovery multiples are assumptions — see docs/HONESTY.md."
+}

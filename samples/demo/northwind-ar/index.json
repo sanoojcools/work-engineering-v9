@@ -1,0 +1,12 @@
+{
+  "tenant": "tenant.json",
+  "pack": "pack.invoice-dispute.v1.json",
+  "intent": "intent.INT-007.json",
+  "sessions": ["session.founder.json", "session.sme.json"],
+  "genomes": ["genome.G-SCOUT.json", "genome.G-DOC.json"],
+  "work_units": "work_units.json",
+  "gap": "gap.expected.json",
+  "scenarios": "wu-114.scenarios.json",
+  "costed": "wu-114.costed.json",
+  "traces": "traces.90d.invoice-dispute.jsonl"
+}

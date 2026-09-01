@@ -1,0 +1,35 @@
+{
+  "function": "invoice-dispute",
+  "window_days": 90,
+  "discovered": 41,
+  "declared": 28,
+  "matched": 24,
+  "undocumented": 9,
+  "phantom": 4,
+  "judgment_zones": 6,
+  "founder_vs_sme": 2,
+  "trace_coverage": 0.62,
+  "undocumented_examples": ["Reconcile remittance", "Chase aged evidence packs"],
+  "phantom_examples": ["Weekly dispute standup minutes", "Spreadsheet recut of ERP aging"],
+  "judgment_examples": ["Escalate to appeals", "Relationship exception on strategic account"],
+  "comparisons": [
+    {
+      "unit": "Assess dispute validity",
+      "founder": "email + spreadsheet",
+      "sme": "ERP + CRM",
+      "traces": "erp.ar event stream invoice.dispute.created → under_review"
+    },
+    {
+      "unit": "Reconcile remittance",
+      "founder": "not on founder map",
+      "sme": "bank feed, 14 min per batch",
+      "traces": "bank.remittance.applied observed"
+    }
+  ],
+  "copy": {
+    "undocumented": "This is the work they actually do.",
+    "phantom": "Declared, never observed.",
+    "judgment": "Discovery cannot see this. Do not fake a trace.",
+    "founder_sme": "Declared vs declared. Not a merge."
+  }
+}

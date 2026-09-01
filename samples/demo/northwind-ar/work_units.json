@@ -1,0 +1,72 @@
+{
+  "units": [
+    {
+      "work_unit_id": "WU-114",
+      "name": "Assess dispute validity",
+      "object_type": "dispute",
+      "object_id_pattern": "DSP-*",
+      "status": "RATIFIED",
+      "owner_id": "usr_sme",
+      "intent_id": "INT-007",
+      "genome_id": "G-DOC",
+      "desired_condition": { "from": "disputed", "to": "assessed" },
+      "acceptance": "Assessment record exists on the dispute with evidence refs. Checkable by a non-executor against erp.ar.",
+      "systems": ["erp.ar", "crm"],
+      "actor_policy": "agent-class-A → fallback human",
+      "minutes_declared": 18,
+      "frequency": "per_dispute",
+      "field_provenance": {
+        "name": "declared",
+        "systems": "observed",
+        "desired_condition": "designed",
+        "acceptance": "designed",
+        "minutes_declared": "declared"
+      },
+      "lints": { "F1_cut": "green", "F1_dup": "green", "machine_readable": "green", "checkable": "green" },
+      "machine_readable": true,
+      "attributes_present": 18
+    },
+    {
+      "work_unit_id": "WU-111",
+      "name": "Request missing evidence",
+      "object_type": "dispute",
+      "status": "CANDIDATE",
+      "genome_id": "G-DOC",
+      "desired_condition": { "from": "created", "to": "evidence_requested" },
+      "machine_readable": false,
+      "field_provenance": { "name": "declared", "systems": "observed" }
+    },
+    {
+      "work_unit_id": "WU-115",
+      "name": "Post adjustment",
+      "object_type": "invoice",
+      "status": "CANDIDATE",
+      "genome_id": "G-DOC",
+      "desired_condition": { "from": "assessed", "to": "adjusted" },
+      "machine_readable": true,
+      "field_provenance": { "name": "observed", "systems": "observed" }
+    },
+    {
+      "work_unit_id": "WU-116",
+      "name": "Release hold",
+      "object_type": "invoice",
+      "status": "CANDIDATE",
+      "genome_id": "G-DOC",
+      "desired_condition": { "from": "adjusted", "to": "closed" }
+    },
+    {
+      "work_unit_id": "WU-117",
+      "name": "Escalate to appeals",
+      "object_type": "dispute",
+      "status": "CANDIDATE",
+      "judgment_zone": true
+    },
+    {
+      "work_unit_id": "WU-118",
+      "name": "Reconcile remittance",
+      "object_type": "invoice",
+      "status": "CANDIDATE",
+      "undocumented_vs_sop": true
+    }
+  ]
+}

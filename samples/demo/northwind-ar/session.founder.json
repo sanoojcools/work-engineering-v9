@@ -1,0 +1,42 @@
+{
+  "session_id": "SES-018",
+  "track": "founder",
+  "actor_id": "usr_priya",
+  "pack_id": "invoice-dispute.v1",
+  "intent_id": "INT-007",
+  "status": "closed",
+  "consent_receipt_id": "CR-440",
+  "genome_strength": 0.82,
+  "provenance": "declared",
+  "closed_at": "2026-08-12T16:40:00Z",
+  "units_declared": [
+    {
+      "name": "Assess dispute validity",
+      "systems": ["email", "spreadsheet"],
+      "minutes": 25,
+      "frequency": "per_dispute",
+      "pain": "high"
+    },
+    {
+      "name": "Request missing evidence",
+      "systems": ["email"],
+      "minutes": 12,
+      "frequency": "per_dispute",
+      "pain": "medium"
+    },
+    {
+      "name": "Post adjustment",
+      "systems": ["erp"],
+      "minutes": 15,
+      "frequency": "per_valid_dispute",
+      "pain": "medium"
+    },
+    {
+      "name": "Release hold",
+      "systems": ["erp"],
+      "minutes": 8,
+      "frequency": "per_adjustment",
+      "pain": "low"
+    }
+  ]
+}

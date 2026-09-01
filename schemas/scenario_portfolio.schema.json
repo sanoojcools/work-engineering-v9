@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wep.local/schemas/scenario_portfolio.schema.json",
+  "title": "ScenarioPortfolio",
+  "type": "object",
+  "required": ["work_unit_id", "derived_level", "scenarios", "moderation"],
+  "properties": {
+    "work_unit_id": { "type": "string" },
+    "derived_level": { "enum": ["L1", "L2", "L3", "L4", "L5"] },
+    "gate": { "enum": ["L1", "L2", "L3", "L4", "L5"] },
+    "scenarios": {
+      "type": "object",
+      "required": ["S1_floor", "S2_derived", "S3_ceiling"]
+    },
+    "moderation": {
+      "type": "object",
+      "required": ["held_at", "recorded", "derived_unchanged", "appetite_lifted_gate"],
+      "properties": {
+        "held_at": { "type": "string" },
+        "by": { "type": "string" },
+        "reason": { "type": "string" },
+        "recorded": { "const": true },
+        "derived_unchanged": { "const": true },
+        "appetite_lifted_gate": { "const": false }
+      }
+    }
+  }
+}

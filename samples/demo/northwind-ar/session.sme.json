@@ -1,0 +1,75 @@
+{
+  "session_id": "SES-019",
+  "track": "sme",
+  "actor_id": "usr_sme",
+  "pack_id": "invoice-dispute.v1",
+  "intent_id": "INT-007",
+  "status": "closed",
+  "consent_receipt_id": "CR-441",
+  "genome_strength": 1.0,
+  "provenance": "declared",
+  "closed_at": "2026-08-13T11:05:00Z",
+  "contradictions_with": ["SES-018"],
+  "units_declared": [
+    {
+      "name": "Assess dispute validity",
+      "systems": ["erp", "crm"],
+      "minutes": 18,
+      "frequency": "per_dispute",
+      "pain": "high",
+      "contradicts_founder": true,
+      "founder_said": "email + spreadsheet"
+    },
+    {
+      "name": "Request missing evidence",
+      "systems": ["email_gateway", "crm"],
+      "minutes": 12,
+      "frequency": "per_dispute",
+      "pain": "medium"
+    },
+    {
+      "name": "Post adjustment",
+      "systems": ["erp"],
+      "minutes": 15,
+      "frequency": "per_valid_dispute",
+      "pain": "medium"
+    },
+    {
+      "name": "Release hold",
+      "systems": ["order_management"],
+      "minutes": 10,
+      "frequency": "per_adjustment",
+      "pain": "low"
+    },
+    {
+      "name": "Notify customer",
+      "systems": ["notification_service"],
+      "minutes": 8,
+      "frequency": "per_resolution",
+      "pain": "low"
+    },
+    {
+      "name": "Update dispute log",
+      "systems": ["dispute_repository"],
+      "minutes": 6,
+      "frequency": "per_dispute",
+      "pain": "low"
+    },
+    {
+      "name": "Escalate to appeals",
+      "systems": ["appeals_queue"],
+      "minutes": 20,
+      "frequency": "per_appeal",
+      "pain": "high"
+    },
+    {
+      "name": "Reconcile remittance",
+      "systems": ["bank_feed"],
+      "minutes": 14,
+      "frequency": "per_batch",
+      "pain": "medium",
+      "contradicts_founder": true,
+      "founder_said": "not on the founder map"
+    }
+  ]
+}

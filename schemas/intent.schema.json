@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wep.local/schemas/intent.schema.json",
+  "title": "IntentRecord",
+  "type": "object",
+  "required": ["intent_id", "version", "tenant_id", "outcome", "owner_id", "provenance"],
+  "additionalProperties": false,
+  "properties": {
+    "intent_id": { "type": "string" },
+    "version": { "type": "integer", "minimum": 1 },
+    "tenant_id": { "type": "string" },
+    "function": { "type": "string" },
+    "outcome": { "type": "string", "minLength": 8 },
+    "constraints": { "type": "array", "items": { "type": "string" } },
+    "owner_id": { "type": "string" },
+    "guardrails": { "type": "array", "items": { "type": "string" } },
+    "constitution_layers_inherited": { "type": "array", "items": { "type": "string" } },
+    "source": { "type": "string" },
+    "provenance": { "enum": ["declared", "designed"] }
+  }
+}

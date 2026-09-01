@@ -1,0 +1,21 @@
+{
+  "work_unit_id": "WU-114",
+  "scenario": "S2",
+  "per": 1000,
+  "hours": {
+    "execution": 118,
+    "review": 41,
+    "exceptions": 40,
+    "governance": 14
+  },
+  "gross_saving_hours": 95,
+  "disciplined_saving_hours": 61.8,
+  "honesty_check": "Gross saving 95h → disciplined 61.8h. Only verified, repeatable hours count.",
+  "residual_harm_hours_per_1000": {
+    "L2": 72,
+    "L3": 51,
+    "L4": 38.2
+  },
+  "fte_is_not_payroll": true,
+  "engagement_may_stop_here": true
+}

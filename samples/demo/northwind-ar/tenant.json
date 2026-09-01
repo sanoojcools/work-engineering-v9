@@ -1,0 +1,15 @@
+{
+  "tenant_id": "ten_northwind_ar",
+  "name": "Northwind AR",
+  "slug": "northwind-ar",
+  "industry": "wholesale-distribution",
+  "function": "accounts-receivable",
+  "timezone": "America/Chicago",
+  "owners": [
+    { "id": "usr_priya", "name": "Priya Shah", "role": "owner" },
+    { "id": "usr_cfo", "name": "Alex Morgan", "role": "cfo" },
+    { "id": "usr_sme", "name": "Dana Ortiz", "role": "sme" }
+  ],
+  "isolation": "row-level",
+  "bootstrap": false
+}

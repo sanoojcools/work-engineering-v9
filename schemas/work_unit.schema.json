@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wep.local/schemas/work_unit.schema.json",
+  "title": "WorkUnit",
+  "type": "object",
+  "required": ["work_unit_id", "name"],
+  "properties": {
+    "work_unit_id": { "type": "string" },
+    "name": { "type": "string" },
+    "object_type": { "type": "string" },
+    "status": { "enum": ["CANDIDATE", "RATIFIED", "RETIRED"] },
+    "desired_condition": { "type": "object" },
+    "acceptance": { "type": "string" },
+    "machine_readable": { "type": "boolean" },
+    "field_provenance": {
+      "type": "object",
+      "additionalProperties": { "enum": ["observed", "declared", "designed", "inferred"] }
+    }
+  }
+}

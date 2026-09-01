@@ -1,0 +1,31 @@
+{
+  "genome_id": "G-SCOUT",
+  "tenant_id": "ten_northwind_ar",
+  "source": "scout_sessions_only",
+  "sessions": ["SES-018", "SES-019"],
+  "documents": [],
+  "traces": [],
+  "genome_strength": 1.0,
+  "genome_strength_meaning": "session_completeness_not_gate_clearance",
+  "gqs": {
+    "score": 28,
+    "weights": { "declared": 0.25, "observed": 0.75 },
+    "note": "Scout-only capture is declared. Observed arm is empty. Persist must fail."
+  },
+  "quality_gate": {
+    "name": "persist_to_inventory",
+    "accepted": false,
+    "reasons": [
+      "No observed traces attached.",
+      "GQS 28 below persist threshold 60.",
+      "All unit provenance is declared.",
+      "Genome Strength 100% is not a substitute for observed weight."
+    ]
+  },
+  "inventory": {
+    "L1": [],
+    "L2": [],
+    "L3": []
+  },
+  "empty_state_copy": "This session is complete as a conversation. It is not yet work we can persist. Attach traces or source documents, or import G-DOC."
+}

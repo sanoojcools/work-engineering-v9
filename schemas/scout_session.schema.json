@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wep.local/schemas/scout_session.schema.json",
+  "title": "ScoutSession",
+  "type": "object",
+  "required": ["session_id", "track", "consent_receipt_id", "provenance", "genome_strength"],
+  "properties": {
+    "session_id": { "type": "string" },
+    "track": { "enum": ["founder", "function_lead", "sme"] },
+    "actor_id": { "type": "string" },
+    "pack_id": { "type": "string" },
+    "intent_id": { "type": "string" },
+    "status": { "enum": ["open", "closed"] },
+    "consent_receipt_id": { "type": "string", "minLength": 3 },
+    "genome_strength": { "type": "number", "minimum": 0, "maximum": 1 },
+    "provenance": { "const": "declared" },
+    "closed_at": { "type": "string" },
+    "contradictions_with": { "type": "array", "items": { "type": "string" } },
+    "units_declared": { "type": "array" }
+  }
+}

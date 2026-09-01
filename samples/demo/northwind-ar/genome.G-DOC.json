@@ -1,0 +1,30 @@
+{
+  "genome_id": "G-DOC",
+  "tenant_id": "ten_northwind_ar",
+  "source": "documents_plus_traces",
+  "sessions": ["SES-018", "SES-019"],
+  "documents": [
+    { "id": "doc_sop_thin", "kind": "sop", "title": "AR dispute desk — thin SOP" },
+    { "id": "doc_time_motion", "kind": "csv", "title": "Time-motion 90d sample" }
+  ],
+  "traces": ["traces.90d.invoice-dispute.jsonl"],
+  "genome_strength": 1.0,
+  "gqs": {
+    "score": 74,
+    "weights": { "declared": 0.25, "observed": 0.75 }
+  },
+  "quality_gate": {
+    "name": "persist_to_inventory",
+    "accepted": true,
+    "reasons": [
+      "Observed traces cover 62% of the cycle.",
+      "GQS 74 ≥ persist threshold 60.",
+      "Desired conditions are checkable against erp.ar."
+    ]
+  },
+  "inventory": {
+    "L1_business_objects": ["invoice", "dispute", "credit_note"],
+    "L2_unit_ids": ["WU-111", "WU-112", "WU-113", "WU-114", "WU-115", "WU-116", "WU-117", "WU-118"],
+    "L3_ratified": ["WU-114"]
+  }
+}

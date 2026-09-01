@@ -1,0 +1,6 @@
+{"trace_id":"tr_8f3c","ts":"2026-04-03T14:22:10Z","object_type":"dispute","object_id":"DSP-2026-10442","event":"invoice.dispute.created","from":"payment_due","to":"disputed","system":"erp.ar","amount":12750}
+{"trace_id":"tr_8f3d","ts":"2026-04-03T15:01:44Z","object_type":"dispute","object_id":"DSP-2026-10442","event":"dispute.under_review","from":"disputed","to":"under_review","system":"erp.ar"}
+{"trace_id":"tr_8f3e","ts":"2026-04-04T09:18:02Z","object_type":"dispute","object_id":"DSP-2026-10442","event":"dispute.assessed","from":"under_review","to":"assessed","system":"erp.ar","actor":"human"}
+{"trace_id":"tr_91aa","ts":"2026-05-11T11:40:00Z","object_type":"invoice","object_id":"INV-2405317","event":"invoice.adjusted","from":"assessed","to":"adjusted","system":"erp.ar"}
+{"trace_id":"tr_91ab","ts":"2026-05-11T11:46:12Z","object_type":"invoice","object_id":"INV-2405317","event":"hold.released","from":"adjusted","to":"closed","system":"erp.ar"}
+{"trace_id":"tr_a012","ts":"2026-06-02T08:15:33Z","object_type":"invoice","object_id":"INV-2500881","event":"bank.remittance.applied","system":"bank_feed"}

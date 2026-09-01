@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wep.local/schemas/genome.schema.json",
+  "title": "Genome",
+  "type": "object",
+  "required": ["genome_id", "quality_gate", "gqs"],
+  "properties": {
+    "genome_id": { "type": "string" },
+    "tenant_id": { "type": "string" },
+    "source": { "type": "string" },
+    "genome_strength": { "type": "number" },
+    "gqs": {
+      "type": "object",
+      "required": ["score"],
+      "properties": {
+        "score": { "type": "number" },
+        "weights": { "type": "object" }
+      }
+    },
+    "quality_gate": {
+      "type": "object",
+      "required": ["accepted", "reasons"],
+      "properties": {
+        "name": { "type": "string" },
+        "accepted": { "type": "boolean" },
+        "reasons": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

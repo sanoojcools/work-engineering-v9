@@ -1,0 +1,30 @@
+{
+  "work_unit_id": "WU-114",
+  "derived_level": "L4",
+  "derived_by": "verdict.v1",
+  "scores": {
+    "observability": 4,
+    "separability": 4,
+    "reversibility": 3,
+    "variance": 3,
+    "judgment_density": 3,
+    "evidence_independence": 4,
+    "recovery_cost": 3
+  },
+  "gate": "L4",
+  "scenarios": {
+    "S1_floor": "L3",
+    "S2_derived": "L4",
+    "S3_ceiling": "L4"
+  },
+  "invariant": "S1 <= S2 <= S3 <= gate",
+  "moderation": {
+    "held_at": "L3",
+    "by": "usr_cfo",
+    "by_name": "Alex Morgan",
+    "reason": "audit season",
+    "recorded": true,
+    "derived_unchanged": true,
+    "appetite_lifted_gate": false
+  }
+}
