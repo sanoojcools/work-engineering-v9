@@ -104,7 +104,49 @@ tr.selected td { background: var(--teal-soft); }
 .tabs button.on { background: var(--teal-soft); border-color: var(--teal); }
 pre { font-size: 12px; background: #f1eee6; padding: 10px; overflow: auto; border-radius: 6px; }
 .footer-note { margin-top: 18px; font-size: 13px; color: var(--muted); }
+.nav-label {
+  margin: 22px 0 8px;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #5c6b80;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+}
+.track-card { cursor: pointer; min-height: 150px; }
+.track-card:hover { border-color: var(--teal); }
+.track-card.soon { opacity: 0.7; cursor: default; }
+.subfn { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.subfn a, .subfn .soon-box {
+  display: block; text-decoration: none; color: inherit;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 14px;
+}
+.subfn a:hover { border-color: var(--teal); }
+.stepper { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 18px; }
+.stepper a {
+  text-decoration: none; color: var(--ink); border: 1px solid var(--line);
+  padding: 6px 10px; border-radius: 99px; font-size: 13px;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+}
+.stepper a.on { background: var(--teal-soft); border-color: var(--teal); }
+.io { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin-top: 16px; }
+.io h3 {
+  margin: 0 0 8px; font-size: 12px; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--muted); font-family: "Source Sans 3", "Segoe UI", sans-serif;
+}
+.info {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 16px; height: 16px; border-radius: 50%;
+  border: 1px solid var(--teal); color: var(--teal); font-size: 11px;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  cursor: help; margin-left: 4px; vertical-align: middle;
+}
+.tip {
+  position: fixed; max-width: 340px; z-index: 20;
+  background: var(--ink); color: #fff; padding: 10px 12px; border-radius: 8px;
+  font-size: 13px; line-height: 1.4; box-shadow: 0 8px 24px rgba(0,0,0,.18);
+}
 @media (max-width: 900px) {
   .app { grid-template-columns: 1fr; }
   .grid.cols-2, .grid.cols-3, .grid.cols-4 { grid-template-columns: 1fr; }
+  .subfn, .io { grid-template-columns: 1fr 1fr; }
 }
